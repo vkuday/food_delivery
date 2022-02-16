@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/colors.dart';
+import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/small_text.dart';
 
@@ -19,54 +20,53 @@ class _MainFoodPageState extends State<MainFoodPage> {
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(
-              top: 45,
-              bottom: 15,
+            margin: EdgeInsets.only(
+              top: Dimensions.height45,
+              bottom: Dimensions.height15,
             ),
-            padding: const EdgeInsets.only(
-              left: 20,
-              right: 20,
+            padding: EdgeInsets.only(
+              left: Dimensions.width20,
+              right: Dimensions.width20,
             ),
-            child: Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      BigText(
-                        text: "Italy",
-                        color: AppColors.mainColor,
-                      ),
-                      Row(
-                        children: [
-                          SmallText(
-                            text: "Volkan",
-                            color: Colors.black54,
-                          ),
-                          const Icon(Icons.arrow_drop_down_rounded),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Center(
-                    child: Container(
-                      width: 45,
-                      height: 45,
-                      child: const Icon(
-                        Icons.search,
-                        color: Colors.white,
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: AppColors.mainColor,
-                      ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    const BigText(
+                      text: "Italy",
+                      color: AppColors.mainColor,
+                    ),
+                    Row(
+                      children: const [
+                        SmallText(
+                          text: "Volkan",
+                          color: Colors.black54,
+                        ),
+                        Icon(Icons.arrow_drop_down_rounded),
+                      ],
+                    ),
+                  ],
+                ),
+                Center(
+                  child: Container(
+                    width: Dimensions.height45,
+                    height: Dimensions.height45,
+                    child: Icon(
+                      Icons.search,
+                      color: Colors.white,
+                      size: Dimensions.iconSize24,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Dimensions.radius15),
+                      color: AppColors.mainColor,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-          FoodPageBody(),
+          const FoodPageBody(),
         ],
       ),
     );
